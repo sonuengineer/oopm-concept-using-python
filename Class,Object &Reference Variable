@@ -1,0 +1,154 @@
+A class is defined using the class keyword in python.
+For example, the below code creates a class called Mobile without any attributes or behavior.
+
+class Mobile:
+    pass
+    
+How to create objects?
+  To create an object, we need a class.
+  The syntax for creating an object is "<classname>()", where <classname> is the name of the class.
+  For example, the below code creates three Mobile objects:
+  Mobile()
+  Mobile()
+  Mobile()
+  
+Accessing objects
+  Just like we need variables to access and use values, we need variables to access and reuse the objects that we create.
+  Such variables that are used to access objects are called reference variables .
+  In the below code, we are creating three objects, each with its own reference variable
+  mob1=Mobile()
+  mob2=Mobile()
+  mob3=Mobile()
+  
+ Look alike Object 
+  If two objects look the same and have the same values, can we treat it as a single object?
+  Each object is unique and independent of other object. Just like every person, including twins, are unique, so is every object.
+  All objects have an internal unique id (just like aadhar or green card number).
+  We can check this using the inbuilt id(). The below code will display the unique number associated with the object.
+  Code in Python 3
+
+  class Mobile:
+    pass
+  mob1=Mobile()
+  mob2=Mobile()
+  print(id(mob1))
+  print(id(mob2))     
+  Output:
+
+  139848487664160
+  139848486992864
+  
+  Attributes of an object
+  
+  How can we create attributes and values for those attributes? This can be done by using the . (dot) operator. 
+  The syntax for creating attribute and value for that is as below:
+  reference_variable.attribute_name=value.
+  For example, in the below code we are creating two attributes price and brand, and assigning them to the two objects we had created.
+  Code in Python 3
+  
+  class Mobile:
+    pass
+  mob1=Mobile()
+  mob2=Mobile()
+  mob1.brand="Apple"
+  mob2.price=3000
+  mob2.brand="Samsung"
+  
+Accessing attributes 
+   Problem Statement
+       We can access the attribute values using the dot operator itself. The syntax is as shown below:
+       reference_variable.attribute_name
+       For example,
+       print (mob1.brand)
+       print (mob2.brand)
+       
+   class Mobile:
+   pass
+   mob1=Mobile()
+   mob2=Mobile()
+   mob1.price=20000
+   mob1.brand="Apple"
+   mob2.price=3000
+   mob2.brand="Samsung"
+   print (mob1.brand)
+   print (mob2.brand)
+          Output:
+             Apple
+             Samsung
+             
+  Additional attributes
+    class Mobile:
+    pass
+    mob1=Mobile()
+    mob2=Mobile()
+    mob1.price=20000
+    mob1.brand="Apple"
+    mob1.ios_version=10
+    mob2.price=3000
+    mob2.brand="Samsung"
+    print(mob1.price,mob1.brand,mob1.ios_version)
+    print(mob2.price,mob2.brand) 
+             Output:
+                 20000 Apple 10
+                 3000 Samsung
+                 
+  Accessing a non-existing attribute
+         If we try to access a non-existing attribute, we will get an Attribute Error.
+          For example,
+              class Mobile:
+              pass
+              mob1=Mobile()
+              mob2=Mobile()
+              mob1.price=20000
+              mob1.brand="Apple"
+              mob1.ios_version=10
+              mob2.price=3000
+              mob2.brand="Samsung"
+              print(mob1.ios_version)
+              print(mob2.ios_version)
+              
+              
+   Variable vs Attribute
+           The rules for a class attribute are very similar to a variable. 
+           You just have to treat reference_variable.attribute_name as a variable.
+           Variable_name = value updates the the value if the variable exists already.
+           variable1 = 5
+           variable1 = 6
+           reference_variable.attribute_name = value updates the attribute if the attribute exists already. 
+           reference_variable1.color = "Green"
+           reference_variable1.color = "Red"
+           
+   Attribute vs Local variable -           
+         Attributes can be created only by using the self variable and the dot operator.
+         Without self we are only creating a local variable and not an attribute.
+   
+          class Mobile:
+    def __init__(self):
+        print ("Inside the Mobile constructor")
+        self.brand = None
+        brand = "Apple" #This is a local variable.
+        #Variables without self are local and they dont
+        #affect the attributes.
+
+        #Local varaibles cannot be accessed outside the init
+        #Using self creates attributes which are
+        #accessible in other methods as well
+
+        mob1=Mobile()
+        print(mob1.brand)#This does not print Apple
+        #This prints None because brand=Apple creates
+        #a local variable and it does not affect the attribute
+        
+        
+        
+
+ 
+  
+                 
+  
+                                                    
+
+  
+ 
+  
+  
